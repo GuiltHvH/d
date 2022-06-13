@@ -1,0 +1,108 @@
+local HealthBar = Instance.new("BillboardGui")
+local Frame = Instance.new("Frame")
+-- local HealthLabel = Instance.new("TextLabel")
+local PName = Instance.new("TextLabel")
+local player = game.Players.LocalPlayer
+local TweenService = game:GetService("TweenService")
+
+HealthBar.Name = "HealthBar" -- the name of the shitty healthbar
+HealthBar.Parent = player.Character.Head -- the parent of the shitty healthbar
+HealthBar.ExtentsOffset = Vector3.new(0, 3, 0) -- offset do not touch 
+HealthBar.Size = UDim2.new(4, 0, 2, 0) -- the size
+
+
+
+-- this is the container 
+Frame.Parent = HealthBar 
+Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Frame.BackgroundTransparency = 1.000
+Frame.Size = UDim2.new(1, 0, 1, 0)
+
+
+
+-- This is for under the player name 
+--[[
+HealthLabel.Name = "HealthLabel"
+HealthLabel.Parent = Frame
+HealthLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HealthLabel.BackgroundTransparency = 1.000
+HealthLabel.Position = UDim2.new(0.200000003, 0, 0.200000003, 0)
+HealthLabel.Size = UDim2.new(0.800000012, 0, 0.300000012, 0)
+HealthLabel.Font = Enum.Font.Arcade
+HealthLabel.Text = "cock"
+HealthLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+HealthLabel.TextScaled = true
+HealthLabel.TextSize = 14.000
+HealthLabel.TextWrapped = true
+HealthLabel.TextXAlignment = Enum.TextXAlignment.Left
+HealthLabel.TextYAlignment = Enum.TextYAlignment.Center
+--]]
+
+
+PName.Name = "PName" -- DONT CHANGE THIS
+PName.Parent = Frame
+PName.BackgroundColor3 = Color3.fromRGB(255, 0,0)
+PName.LineHeight = "1.5"
+PName.BackgroundTransparency = 1.000
+PName.Position = UDim2.new(0, 0, 0, 0)
+PName.Size = UDim2.new(1, 0, 1, 0)
+PName.Font = Enum.Font.Bangers -- FONT
+PName.Text = "accelerator" -- CUSTOM NAME
+PName.TextColor3 = Color3.fromRGB(255,255,255)
+PName.TextScaled = true
+PName.TextSize = 1
+PName.TextStrokeColor3 = Color3.fromRGB(0,0,0) -- change this for text outline
+PName.TextStrokeTransparency = 0.000
+PName.TextWrapped = true
+PName.TextXAlignment = Enum.TextXAlignment.Center
+PName.TextYAlignment = Enum.TextYAlignment.Center
+PName.Rotation = 3.25 -- DO NOT FUCK WITH THIS
+
+
+
+local part = PName -- dont change this either
+        
+        local Info = TweenInfo.new(
+            2,                              --Length (seconds)
+            Enum.EasingStyle.Sine,          --Easing Style
+            Enum.EasingDirection.InOut,       --Easing Direction
+            -1,                             --Times Repeated
+            true,                           --reversed
+            0                               --deşau
+            )
+            
+        local Goals = {
+            Rotation = -3.25
+        } -- properties
+        
+        local nametween = TweenService:Create(part, Info, Goals) -- shit 
+        nametween:Play() -- dont forget this
+
+local char = game.Players.LocalPlayer.Character
+Hair7 = Instance.new("Part")
+Hair7.Parent = char
+Hair7.Name = "Hair"
+Hair7.CanCollide = false
+Hair7.Locked = true
+Hair7.TopSurface = "Smooth"
+Hair7.BottomSurface = "Smooth"
+Hair7.formFactor = "Symmetric"
+Hair7.Material = "Neon"
+Hair7.BrickColor = BrickColor.new("Medium stone grey")
+Hair7.CFrame = char.Torso.CFrame
+Hair7.Size = Vector3.new(0.5, 0.5, 0.5)
+Hair7.Transparency = 0
+
+Weld1 = Instance.new("Weld")
+Weld1.Parent = char.Head
+Weld1.Part0 = char.Head
+Weld1.Part1 = Hair7
+Weld1.C0 = CFrame.new(0, 1.2, -0.17)
+
+Mesh = Instance.new("SpecialMesh")
+Mesh.Offset = Vector3.new(0,-0.75,0.25)
+Mesh.Parent = Hair7
+Mesh.Scale = Vector3.new(0.825,0.825,0.825)
+Mesh.MeshType = "FileMesh"
+Mesh.MeshId = "http://www.roblox.com/asset/?id=6342067224"
+Mesh.TextureId = "" 
